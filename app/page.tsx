@@ -1,5 +1,6 @@
 import { getProjects } from "@/sanity/sanity-utils"
 import Image from "next/image"
+import Link from "next/link"
 
 const Home = async () => {
   const projects = await getProjects()
@@ -21,19 +22,22 @@ const Home = async () => {
         {projects.map((project) => (
           <div
             key={project._id}
-            className='border border-blue-900 rounded-lg p-3'
+            className='border-2 border-blue-900 rounded-lg p-1'
           >
             {project.image && (
               <Image
                 src={project.image}
                 alt={project.imageAlt}
-                width={250}
-                height={100}
+                width={750}
+                height={300}
                 className='object-cover rounded-lg border border-blue-800'
               />
             )}
-            <div className='font-extrabold bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-transparent'>
+            <div className='mt-2 font-extrabold bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-transparent'>
               {project.name}
+            </div>
+            <div className='bg-blue-900 text-blue-300 float-right rounded-lg m-2 p-2 w-1/2 text-center hover:scale-105 transition'>
+              <Link href={`/projects/${project.slug}`}>View Test</Link>
             </div>
           </div>
         ))}
