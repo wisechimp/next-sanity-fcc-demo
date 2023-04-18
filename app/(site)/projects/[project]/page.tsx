@@ -13,7 +13,7 @@ const Project = async ({ params }: ProjectProps) => {
   const { name, url, content, image, imageAlt } = project
 
   return (
-    <div className='max-w-3xl mx-auto py-20'>
+    <div>
       <header className='flex items-center justify-between'>
         <h1 className='bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold'>
           {name}

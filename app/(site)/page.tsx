@@ -7,7 +7,7 @@ const Home = async () => {
   console.log(JSON.stringify(projects))
 
   return (
-    <div className='max-w-5xl mx-auto py-20'>
+    <div>
       <h1 className='text-7xl font-extrabold text-blue-950'>
         Hello I&apos;m{" "}
         <span className='bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-transparent'>
